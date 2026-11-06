@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  risk_backend:
+    build:
+      context: . # Собираем из текущей корневой папки, где лежит Dockerfile  
+    container_name: finrisk_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./mlflow_logs:/app/mlflow_data # Блок сохранения логов приперезагрузках  
